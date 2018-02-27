@@ -1,4 +1,99 @@
 <resources>
     <string name="app_name">FRC 2018 Scout</string>
     <string name="action_settings">Settings</string>
+    <string-array name="TeamMembers">
+        <item>Jordyn</item>
+        <item>Henry</item>
+        <item>Caiden</item>
+        <item>Colton</item>
+        <item>Jacob D.</item>
+        <item>Emily</item>
+        <item>Ethan D.</item>
+        <item>Kyle</item>
+        <item>Christian</item>
+        <item>Elijah</item>
+        <item>Grant</item>
+        <item>Jason</item>
+        <item>Matt J.</item>
+        <item>Jake</item>
+        <item>Lexi</item>
+        <item>Jacob K.</item>
+        <item>Noah</item>
+        <item>Jaden</item>
+        <item>Ben</item>
+        <item>Elyse</item>
+        <item>Ethan P.</item>
+        <item>Nick</item>
+        <item>Makaila</item>
+        <item>Dustin</item>
+        <item>Nathan</item>
+        <item>Carl</item>
+        <item>Matt T.</item>
+        <item>David</item>
+        <item>McKinley</item>
+        <item>Camden</item>
+        <item>Kenton</item>
+        <item>Madison</item>
+    </string-array>
+    <string-array name="KetteringTeamNumbers">
+        <item>217</item>
+        <item>314</item>
+        <item>469</item>
+        <item>494</item>
+        <item>1243</item>
+        <item>1505</item>
+        <item>1506</item>
+        <item>1684</item>
+        <item>2604</item>
+        <item>2619</item>
+        <item>3234</item>
+        <item>3534</item>
+        <item>3667</item>
+        <item>3707</item>
+        <item>4003</item>
+        <item>4380</item>
+        <item>4998</item>
+        <item>5046</item>
+        <item>5084</item>
+        <item>5201</item>
+        <item>5235</item>
+        <item>5238</item>
+        <item>5447</item>
+        <item>5533</item>
+        <item>5712</item>
+        <item>5713</item>
+        <item>5774</item>
+        <item>5926</item>
+        <item>6066</item>
+        <item>6073</item>
+        <item>6085</item>
+        <item>6193</item>
+        <item>6531</item>
+        <item>6548</item>
+        <item>6597</item>
+        <item>6631</item>
+        <item>6635</item>
+        <item>6954</item>
+        <item>7144</item>
+        <item>7192</item>
+    </string-array>
+
+    <string-array name="Event">
+        <item>Kettering</item>
+        <item>GVSU</item>
+        <item>State</item>
+        <item>Worlds</item>
+    </string-array>
+
+    <string-array name="StartingLocation">
+        <item>Left</item>
+        <item>Center</item>
+        <item>Right</item>
+    </string-array>
+
+    <string-array name="Climb">
+        <item>Not Available</item>
+        <item>Front</item>
+        <item>Side</item>
+    </string-array>
 </resources>

@@ -32,7 +32,7 @@
                 app:layout_constraintTop_toBottomOf="@+id/textView7">
 
                 <Button
-                    android:id="@id/button"
+                    android:id="@+id/teleopScaleMinus"
                     android:layout_width="40dp"
                     android:layout_height="40dp"
                     android:layout_weight="1"
@@ -41,7 +41,7 @@
                     tools:layout_editor_absoluteY="135dp" />
 
                 <EditText
-                    android:id="@id/editText4"
+                    android:id="@+id/teleopScale"
                     android:layout_width="89dp"
                     android:layout_height="40dp"
                     android:layout_weight="1"
@@ -51,7 +51,7 @@
                     tools:layout_editor_absoluteY="135dp" />
 
                 <Button
-                    android:id="@id/button2"
+                    android:id="@+id/teleopScalePlus"
                     android:layout_width="40dp"
                     android:layout_height="40dp"
                     android:layout_weight="1"
@@ -102,11 +102,11 @@
                 android:id="@+id/defenseCheckbox"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginEnd="50dp"
-                android:layout_marginRight="50dp"
+                android:layout_marginEnd="48dp"
                 android:layout_marginTop="20dp"
+                app:layout_constraintBottom_toBottomOf="@+id/textView11"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textView9" />
+                app:layout_constraintTop_toBottomOf="@+id/vaultLinearLayout" />
 
             <LinearLayout
                 android:id="@+id/autonScaleLinearLayout"
@@ -121,7 +121,7 @@
                 app:layout_constraintTop_toBottomOf="@+id/textView3">
 
                 <Button
-                    android:id="@id/button"
+                    android:id="@+id/autonScaleMinus"
                     android:layout_width="40dp"
                     android:layout_height="40dp"
                     android:layout_weight="1"
@@ -130,7 +130,7 @@
                     tools:layout_editor_absoluteY="135dp" />
 
                 <EditText
-                    android:id="@id/editText4"
+                    android:id="@+id/autonScale"
                     android:layout_width="89dp"
                     android:layout_height="40dp"
                     android:layout_weight="1"
@@ -140,7 +140,7 @@
                     tools:layout_editor_absoluteY="135dp" />
 
                 <Button
-                    android:id="@id/button2"
+                    android:id="@+id/autonScalePlus"
                     android:layout_width="40dp"
                     android:layout_height="40dp"
                     android:layout_weight="1"
@@ -154,9 +154,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="30dp"
-                android:layout_marginLeft="30dp"
                 android:layout_marginTop="20dp"
-                android:text="Drove Past Neutral Zone"
+                android:text="Drove Past Base Line"
                 android:textSize="20sp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/textView5" />
@@ -231,11 +230,10 @@
                 app:layout_constraintTop_toBottomOf="@+id/textView3" />
 
             <CheckBox
-                android:id="@+id/neutealZoneCheckbox"
+                android:id="@+id/baseLineCheckbox"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="50dp"
-                android:layout_marginRight="50dp"
                 android:layout_marginTop="20dp"
                 app:layout_constraintBottom_toBottomOf="@+id/textView6"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -267,7 +265,7 @@
                 app:layout_constraintTop_toBottomOf="@+id/baselineCheckBox">
 
                 <Button
-                    android:id="@+id/button"
+                    android:id="@+id/autonSwitchMinus"
                     android:layout_width="40dp"
                     android:layout_height="40dp"
                     android:layout_weight="1"
@@ -276,7 +274,7 @@
                     tools:layout_editor_absoluteY="135dp" />
 
                 <EditText
-                    android:id="@+id/editText4"
+                    android:id="@+id/autonSwitch"
                     android:layout_width="89dp"
                     android:layout_height="40dp"
                     android:layout_weight="1"
@@ -286,7 +284,7 @@
                     tools:layout_editor_absoluteY="135dp" />
 
                 <Button
-                    android:id="@+id/button2"
+                    android:id="@+id/autonSwitchPlus"
                     android:layout_width="40dp"
                     android:layout_height="40dp"
                     android:layout_weight="1"
@@ -308,7 +306,7 @@
                 app:layout_constraintTop_toBottomOf="@+id/textView8">
 
                 <Button
-                    android:id="@id/button"
+                    android:id="@+id/teleopAllianceSwitchPlus"
                     android:layout_width="40dp"
                     android:layout_height="40dp"
                     android:layout_weight="1"
@@ -317,7 +315,7 @@
                     tools:layout_editor_absoluteY="135dp" />
 
                 <EditText
-                    android:id="@id/editText4"
+                    android:id="@+id/teleopAllianceSwitch"
                     android:layout_width="89dp"
                     android:layout_height="40dp"
                     android:layout_weight="1"
@@ -327,7 +325,7 @@
                     tools:layout_editor_absoluteY="135dp" />
 
                 <Button
-                    android:id="@id/button2"
+                    android:id="@+id/teleopAllianceSwitchMinus"
                     android:layout_width="40dp"
                     android:layout_height="40dp"
                     android:layout_weight="1"
@@ -369,7 +367,7 @@
                 app:layout_constraintEnd_toEndOf="parent">
 
                 <Button
-                    android:id="@id/button"
+                    android:id="@+id/teleopOpponentSwitchMinus"
                     android:layout_width="40dp"
                     android:layout_height="40dp"
                     android:layout_weight="1"
@@ -378,7 +376,7 @@
                     tools:layout_editor_absoluteY="135dp" />
 
                 <EditText
-                    android:id="@id/editText4"
+                    android:id="@+id/teleopOpponentSwitch"
                     android:layout_width="89dp"
                     android:layout_height="40dp"
                     android:layout_weight="1"
@@ -388,7 +386,7 @@
                     tools:layout_editor_absoluteY="135dp" />
 
                 <Button
-                    android:id="@id/button2"
+                    android:id="@+id/teleopOpponentSwitchPlus"
                     android:layout_width="40dp"
                     android:layout_height="40dp"
                     android:layout_weight="1"
@@ -401,17 +399,15 @@
                 android:id="@+id/vaultLinearLayout"
                 android:layout_width="186dp"
                 android:layout_height="40dp"
-                android:layout_marginBottom="8dp"
                 android:layout_marginEnd="30dp"
-                android:layout_marginRight="30dp"
-                android:layout_marginTop="20dp"
+                android:layout_marginTop="8dp"
                 android:orientation="horizontal"
-                app:layout_constraintBottom_toBottomOf="@+id/textView11"
+                app:layout_constraintBottom_toBottomOf="@+id/textView10"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/defenseCheckbox">
+                app:layout_constraintTop_toBottomOf="@+id/teleopAllianceSwitchLinearLayout">
 
                 <Button
-                    android:id="@id/button"
+                    android:id="@+id/vaultMinus"
                     android:layout_width="40dp"
                     android:layout_height="40dp"
                     android:layout_weight="1"
@@ -420,7 +416,7 @@
                     tools:layout_editor_absoluteY="135dp" />
 
                 <EditText
-                    android:id="@id/editText4"
+                    android:id="@+id/vault"
                     android:layout_width="89dp"
                     android:layout_height="40dp"
                     android:layout_weight="1"
@@ -430,7 +426,7 @@
                     tools:layout_editor_absoluteY="135dp" />
 
                 <Button
-                    android:id="@id/button2"
+                    android:id="@+id/vaultPlus"
                     android:layout_width="40dp"
                     android:layout_height="40dp"
                     android:layout_weight="1"
@@ -456,9 +452,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="30dp"
-                android:layout_marginLeft="30dp"
                 android:layout_marginTop="20dp"
-                android:text="Vault"
+                android:text="Playing Defense?"
                 android:textSize="20sp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/textView10" />
@@ -468,9 +463,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="30dp"
-                android:layout_marginLeft="30dp"
                 android:layout_marginTop="20dp"
-                android:text="Playing Defense?"
+                android:text="Vault"
                 android:textSize="20sp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/textView9" />
