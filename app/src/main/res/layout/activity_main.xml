@@ -22,8 +22,6 @@
 
     <include
         layout="@layout/content_main"
-        android:layout_width="623dp"
-        android:layout_height="wrap_content"
         tools:layout_editor_absoluteY="53dp" />
 
 </android.support.design.widget.CoordinatorLayout>
