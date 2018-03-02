@@ -610,7 +610,9 @@
                 android:layout_marginEnd="70dp"
                 android:layout_marginTop="20dp"
                 android:text="Blue  "
-                android:textColor="@color/colorPrimary"
+                android:textColor="#000000"
+                android:thumbTint="#666666"
+                android:trackTint="#595959"
                 app:layout_constraintBottom_toBottomOf="@+id/textView18"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/matchNumberText" />
@@ -621,7 +623,7 @@
                 android:layout_height="95dp"
                 android:layout_marginEnd="8dp"
                 android:layout_marginStart="8dp"
-                android:layout_marginTop="20dp"
+                android:layout_marginTop="10dp"
                 android:ems="10"
                 android:inputType="textMultiLine"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -637,7 +639,7 @@
                 android:layout_marginTop="20dp"
                 android:text="Red"
                 android:textAllCaps="false"
-                android:textColor="@android:color/holo_red_light"
+                android:textColor="@android:color/black"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toEndOf="@+id/allianceColorSwitch"
                 app:layout_constraintTop_toBottomOf="@+id/matchNumberText" />
