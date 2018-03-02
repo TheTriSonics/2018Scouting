@@ -21,10 +21,9 @@
 
             <LinearLayout
                 android:id="@+id/teleopScaleLinearLayout"
-                android:layout_width="186dp"
-                android:layout_height="40dp"
+                android:layout_width="200dp"
+                android:layout_height="50dp"
                 android:layout_marginEnd="30dp"
-                android:layout_marginRight="30dp"
                 android:layout_marginTop="20dp"
                 android:orientation="horizontal"
                 app:layout_constraintBottom_toBottomOf="@+id/textView8"
@@ -43,15 +42,58 @@
                 <EditText
                     android:id="@+id/teleopScale"
                     android:layout_width="89dp"
-                    android:layout_height="40dp"
+                    android:layout_height="45dp"
                     android:layout_weight="1"
                     android:ems="10"
                     android:inputType="number"
+                    android:text="0"
+                    android:textAlignment="center"
                     tools:layout_editor_absoluteX="224dp"
                     tools:layout_editor_absoluteY="135dp" />
 
                 <Button
                     android:id="@+id/teleopScalePlus"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_weight="1"
+                    android:text="+"
+                    tools:layout_editor_absoluteX="328dp"
+                    tools:layout_editor_absoluteY="135dp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/driverRatingLinearLayout"
+                android:layout_width="200dp"
+                android:layout_height="50dp"
+                android:layout_marginEnd="30dp"
+                android:layout_marginTop="20dp"
+                android:orientation="horizontal"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/climbSpinner">
+
+                <Button
+                    android:id="@+id/driverRatingMinus"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_weight="1"
+                    android:text="-"
+                    tools:layout_editor_absoluteX="172dp"
+                    tools:layout_editor_absoluteY="135dp" />
+
+                <EditText
+                    android:id="@+id/driverRating"
+                    android:layout_width="89dp"
+                    android:layout_height="45dp"
+                    android:layout_weight="1"
+                    android:ems="10"
+                    android:inputType="number"
+                    android:text="0"
+                    android:textAlignment="center"
+                    tools:layout_editor_absoluteX="224dp"
+                    tools:layout_editor_absoluteY="135dp" />
+
+                <Button
+                    android:id="@+id/driverRatingPlus"
                     android:layout_width="40dp"
                     android:layout_height="40dp"
                     android:layout_weight="1"
@@ -90,11 +132,9 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="30dp"
-                android:layout_marginLeft="30dp"
                 android:layout_marginTop="20dp"
                 android:text="Baseline"
                 android:textSize="20sp"
-                app:layout_constraintBottom_toBottomOf="@+id/baselineCheckBox"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/textView" />
 
@@ -102,7 +142,7 @@
                 android:id="@+id/defenseCheckbox"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginEnd="48dp"
+                android:layout_marginEnd="50dp"
                 android:layout_marginTop="20dp"
                 app:layout_constraintBottom_toBottomOf="@+id/textView11"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -110,10 +150,9 @@
 
             <LinearLayout
                 android:id="@+id/autonScaleLinearLayout"
-                android:layout_width="186dp"
-                android:layout_height="40dp"
+                android:layout_width="200dp"
+                android:layout_height="50dp"
                 android:layout_marginEnd="30dp"
-                android:layout_marginRight="30dp"
                 android:layout_marginTop="20dp"
                 android:orientation="horizontal"
                 app:layout_constraintBottom_toBottomOf="@+id/textView4"
@@ -132,10 +171,12 @@
                 <EditText
                     android:id="@+id/autonScale"
                     android:layout_width="89dp"
-                    android:layout_height="40dp"
+                    android:layout_height="45dp"
                     android:layout_weight="1"
                     android:ems="10"
                     android:inputType="number"
+                    android:text="0"
+                    android:textAlignment="center"
                     tools:layout_editor_absoluteX="224dp"
                     tools:layout_editor_absoluteY="135dp" />
 
@@ -148,17 +189,6 @@
                     tools:layout_editor_absoluteX="328dp"
                     tools:layout_editor_absoluteY="135dp" />
             </LinearLayout>
-
-            <TextView
-                android:id="@+id/textView6"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="30dp"
-                android:layout_marginTop="20dp"
-                android:text="Drove Past Base Line"
-                android:textSize="20sp"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textView5" />
 
             <Spinner
                 android:id="@+id/climbSpinner"
@@ -229,16 +259,6 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/textView3" />
 
-            <CheckBox
-                android:id="@+id/baseLineCheckbox"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginEnd="50dp"
-                android:layout_marginTop="20dp"
-                app:layout_constraintBottom_toBottomOf="@+id/textView6"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/incorrectColorCheckbox" />
-
             <TextView
                 android:id="@+id/textView8"
                 android:layout_width="wrap_content"
@@ -253,11 +273,10 @@
 
             <LinearLayout
                 android:id="@+id/autonSwitchLinearLayout"
-                android:layout_width="186dp"
-                android:layout_height="40dp"
+                android:layout_width="200dp"
+                android:layout_height="50dp"
                 android:layout_marginBottom="8dp"
                 android:layout_marginEnd="30dp"
-                android:layout_marginRight="30dp"
                 android:layout_marginTop="20dp"
                 android:orientation="horizontal"
                 app:layout_constraintBottom_toBottomOf="@+id/textView3"
@@ -276,10 +295,12 @@
                 <EditText
                     android:id="@+id/autonSwitch"
                     android:layout_width="89dp"
-                    android:layout_height="40dp"
+                    android:layout_height="45dp"
                     android:layout_weight="1"
                     android:ems="10"
                     android:inputType="number"
+                    android:text="0"
+                    android:textAlignment="center"
                     tools:layout_editor_absoluteX="224dp"
                     tools:layout_editor_absoluteY="135dp" />
 
@@ -295,10 +316,9 @@
 
             <LinearLayout
                 android:id="@+id/teleopAllianceSwitchLinearLayout"
-                android:layout_width="186dp"
-                android:layout_height="40dp"
+                android:layout_width="200dp"
+                android:layout_height="50dp"
                 android:layout_marginEnd="30dp"
-                android:layout_marginRight="30dp"
                 android:layout_marginTop="20dp"
                 android:orientation="horizontal"
                 app:layout_constraintBottom_toBottomOf="@+id/textView9"
@@ -306,7 +326,7 @@
                 app:layout_constraintTop_toBottomOf="@+id/textView8">
 
                 <Button
-                    android:id="@+id/teleopAllianceSwitchPlus"
+                    android:id="@+id/teleopAllianceSwitchMinus"
                     android:layout_width="40dp"
                     android:layout_height="40dp"
                     android:layout_weight="1"
@@ -317,15 +337,17 @@
                 <EditText
                     android:id="@+id/teleopAllianceSwitch"
                     android:layout_width="89dp"
-                    android:layout_height="40dp"
+                    android:layout_height="45dp"
                     android:layout_weight="1"
                     android:ems="10"
                     android:inputType="number"
+                    android:text="0"
+                    android:textAlignment="center"
                     tools:layout_editor_absoluteX="224dp"
                     tools:layout_editor_absoluteY="135dp" />
 
                 <Button
-                    android:id="@+id/teleopAllianceSwitchMinus"
+                    android:id="@+id/teleopAllianceSwitchPlus"
                     android:layout_width="40dp"
                     android:layout_height="40dp"
                     android:layout_weight="1"
@@ -358,13 +380,14 @@
 
             <LinearLayout
                 android:id="@+id/teleopOpponentSwitchLinearLayout"
-                android:layout_width="186dp"
-                android:layout_height="40dp"
+                android:layout_width="200dp"
+                android:layout_height="50dp"
                 android:layout_marginEnd="30dp"
-                android:layout_marginRight="30dp"
+                android:layout_marginTop="10dp"
                 android:orientation="horizontal"
                 app:layout_constraintBottom_toBottomOf="@+id/textView7"
-                app:layout_constraintEnd_toEndOf="parent">
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView20">
 
                 <Button
                     android:id="@+id/teleopOpponentSwitchMinus"
@@ -378,10 +401,12 @@
                 <EditText
                     android:id="@+id/teleopOpponentSwitch"
                     android:layout_width="89dp"
-                    android:layout_height="40dp"
+                    android:layout_height="45dp"
                     android:layout_weight="1"
                     android:ems="10"
                     android:inputType="number"
+                    android:text="0"
+                    android:textAlignment="center"
                     tools:layout_editor_absoluteX="224dp"
                     tools:layout_editor_absoluteY="135dp" />
 
@@ -397,8 +422,8 @@
 
             <LinearLayout
                 android:id="@+id/vaultLinearLayout"
-                android:layout_width="186dp"
-                android:layout_height="40dp"
+                android:layout_width="200dp"
+                android:layout_height="50dp"
                 android:layout_marginEnd="30dp"
                 android:layout_marginTop="8dp"
                 android:orientation="horizontal"
@@ -418,10 +443,12 @@
                 <EditText
                     android:id="@+id/vault"
                     android:layout_width="89dp"
-                    android:layout_height="40dp"
+                    android:layout_height="45dp"
                     android:layout_weight="1"
                     android:ems="10"
                     android:inputType="number"
+                    android:text="0"
+                    android:textAlignment="center"
                     tools:layout_editor_absoluteX="224dp"
                     tools:layout_editor_absoluteY="135dp" />
 
@@ -440,9 +467,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="30dp"
-                android:layout_marginLeft="30dp"
                 android:layout_marginTop="20dp"
-                android:text="Climb"
+                android:text="Climbing and Parking"
                 android:textSize="20sp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/textView23" />
@@ -557,10 +583,9 @@
                 android:layout_width="74dp"
                 android:layout_height="48dp"
                 android:layout_marginEnd="30dp"
-                android:layout_marginRight="30dp"
                 android:layout_marginTop="20dp"
                 android:ems="10"
-                android:inputType="textPersonName"
+                android:inputType="textPersonName|number|phone"
                 android:textAlignment="center"
                 app:layout_constraintBottom_toBottomOf="@+id/textView16"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -583,10 +608,9 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="70dp"
-                android:layout_marginRight="70dp"
                 android:layout_marginTop="20dp"
-                android:text="Red "
-                android:textColor="@android:color/holo_red_light"
+                android:text="Blue  "
+                android:textColor="@color/colorPrimary"
                 app:layout_constraintBottom_toBottomOf="@+id/textView18"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/matchNumberText" />
@@ -609,13 +633,11 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="47dp"
-                android:layout_marginLeft="1dp"
-                android:layout_marginRight="47dp"
                 android:layout_marginStart="1dp"
-                android:layout_marginTop="17dp"
-                android:text="Blue"
+                android:layout_marginTop="20dp"
+                android:text="Red"
                 android:textAllCaps="false"
-                android:textColor="@android:color/holo_blue_dark"
+                android:textColor="@android:color/holo_red_light"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toEndOf="@+id/allianceColorSwitch"
                 app:layout_constraintTop_toBottomOf="@+id/matchNumberText" />
@@ -628,6 +650,7 @@
                 android:layout_marginStart="8dp"
                 android:layout_marginTop="20dp"
                 android:text="Autonomous"
+                android:textAlignment="center"
                 android:textSize="40sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -641,23 +664,23 @@
                 android:layout_marginStart="8dp"
                 android:layout_marginTop="20dp"
                 android:text="Teleoperated"
+                android:textAlignment="center"
                 android:textSize="40sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textView6" />
+                app:layout_constraintTop_toBottomOf="@+id/textView5" />
 
             <TextView
                 android:id="@+id/textView22"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginEnd="8dp"
-                android:layout_marginStart="8dp"
+                android:layout_marginStart="30dp"
                 android:layout_marginTop="20dp"
                 android:text="Comments and Penalties"
-                android:textSize="40sp"
-                app:layout_constraintEnd_toEndOf="parent"
+                android:textAlignment="center"
+                android:textSize="20sp"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textView12" />
+                app:layout_constraintTop_toBottomOf="@+id/textView6" />
 
             <TextView
                 android:id="@+id/textView23"
@@ -667,10 +690,24 @@
                 android:layout_marginStart="8dp"
                 android:layout_marginTop="20dp"
                 android:text="End Game"
+                android:textAlignment="center"
                 android:textSize="40sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/textView11" />
+
+            <TextView
+                android:id="@+id/textView6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="30dp"
+                android:layout_marginTop="8dp"
+                android:text="Driver Rating"
+                android:textSize="20sp"
+                app:layout_constraintBottom_toBottomOf="@+id/driverRatingLinearLayout"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView12" />
+
         </android.support.constraint.ConstraintLayout>
 
     </ScrollView>

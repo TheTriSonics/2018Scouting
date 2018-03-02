@@ -2,6 +2,7 @@
     <string name="app_name">FRC 2018 Scout</string>
     <string name="action_settings">Settings</string>
     <string-array name="TeamMembers">
+        <item>   </item>
         <item>Jordyn</item>
         <item>Henry</item>
         <item>Caiden</item>
@@ -36,6 +37,7 @@
         <item>Madison</item>
     </string-array>
     <string-array name="KetteringTeamNumbers">
+        <item>     </item>
         <item>217</item>
         <item>314</item>
         <item>469</item>
@@ -79,6 +81,7 @@
     </string-array>
 
     <string-array name="Event">
+        <item>    </item>
         <item>Kettering</item>
         <item>GVSU</item>
         <item>State</item>
@@ -86,14 +89,17 @@
     </string-array>
 
     <string-array name="StartingLocation">
+        <item>    </item>
         <item>Left</item>
         <item>Center</item>
         <item>Right</item>
     </string-array>
 
     <string-array name="Climb">
+        <item>    </item>
         <item>Not Available</item>
         <item>Front</item>
         <item>Side</item>
+        <item>Parked on Ramp</item>
     </string-array>
 </resources>

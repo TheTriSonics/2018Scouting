@@ -5,11 +5,15 @@ import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.text.TextUtils;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.CheckBox;
+import android.widget.EditText;
+import android.widget.Spinner;
 import android.widget.Switch;
 
 public class MainActivity extends AppCompatActivity {
@@ -57,6 +61,8 @@ public class MainActivity extends AppCompatActivity {
         EditText teleopScaleNum = (EditText) findViewById(R.id.teleopScale);
         EditText teleopAllianceSwitchNum = (EditText) findViewById(R.id.teleopAllianceSwitch);
         EditText vaultNum = (EditText) findViewById(R.id.vault);
+        CheckBox defense = (CheckBox) findViewById(R.id.defenseCheckbox);
+        EditText driverNum = (EditText) findViewById(R.id.driverRating);
 
         Button autoSwitchP = (Button) findViewById(R.id.autonSwitchPlus);
         autoSwitchP.setOnClickListener(v -> {
@@ -69,17 +75,17 @@ public class MainActivity extends AppCompatActivity {
         });
 
         Button autoSwitchM = (Button) findViewById(R.id.autonSwitchMinus);
-        autoSwitchP.setOnClickListener(v -> {
+        autoSwitchM.setOnClickListener(v -> {
             int start = Integer.parseInt(autoSwitchNum.getText().toString());
             if (start > 0) {
-                start++;
+                start--;
                 String result = String.valueOf(start);
                 autoSwitchNum.setText(result);
             }
         });
 
         Button autoScaleP = (Button) findViewById(R.id.autonScalePlus);
-        autoSwitchP.setOnClickListener(v -> {
+        autoScaleP.setOnClickListener(v -> {
             int start = Integer.parseInt(autoScaleNum.getText().toString());
             if (start < 10) {
                 start++;
@@ -89,19 +95,19 @@ public class MainActivity extends AppCompatActivity {
         });
 
         Button autoScaleM = (Button) findViewById(R.id.autonScaleMinus);
-        autoSwitchP.setOnClickListener(v -> {
+        autoScaleM.setOnClickListener(v -> {
             int start = Integer.parseInt(autoScaleNum.getText().toString());
             if (start > 0) {
-                start++;
+                start--;
                 String result = String.valueOf(start);
                 autoScaleNum.setText(result);
             }
         });
 
         Button teleopOpponentSwitchP = (Button) findViewById(R.id.teleopOpponentSwitchPlus);
-        autoSwitchP.setOnClickListener(v -> {
+        teleopOpponentSwitchP.setOnClickListener(v -> {
             int start = Integer.parseInt(teleopOpponentSwitchNum.getText().toString());
-            if (start < 10) {
+            if (start < 50) {
                 start++;
                 String result = String.valueOf(start);
                 teleopOpponentSwitchNum.setText(result);
@@ -109,19 +115,19 @@ public class MainActivity extends AppCompatActivity {
         });
 
         Button teleopOpponentSwitchM = (Button) findViewById(R.id.teleopOpponentSwitchMinus);
-        autoSwitchP.setOnClickListener(v -> {
+        teleopOpponentSwitchM.setOnClickListener(v -> {
             int start = Integer.parseInt(teleopOpponentSwitchNum.getText().toString());
             if (start > 0) {
-                start++;
+                start--;
                 String result = String.valueOf(start);
                 teleopOpponentSwitchNum.setText(result);
             }
         });
 
         Button teleopScaleP = (Button) findViewById(R.id.teleopScalePlus);
-        autoSwitchP.setOnClickListener(v -> {
+        teleopScaleP.setOnClickListener(v -> {
             int start = Integer.parseInt(teleopScaleNum.getText().toString());
-            if (start < 10) {
+            if (start < 50) {
                 start++;
                 String result = String.valueOf(start);
                 teleopScaleNum.setText(result);
@@ -129,19 +135,19 @@ public class MainActivity extends AppCompatActivity {
         });
 
         Button teleopScaleM = (Button) findViewById(R.id.teleopScaleMinus);
-        autoSwitchP.setOnClickListener(v -> {
+        teleopScaleM.setOnClickListener(v -> {
             int start = Integer.parseInt(teleopScaleNum.getText().toString());
             if (start > 0) {
-                start++;
+                start--;
                 String result = String.valueOf(start);
                 teleopScaleNum.setText(result);
             }
         });
 
         Button teleopAllianceSwitchP = (Button) findViewById(R.id.teleopAllianceSwitchPlus);
-        autoSwitchP.setOnClickListener(v -> {
+        teleopAllianceSwitchP.setOnClickListener(v -> {
             int start = Integer.parseInt(teleopAllianceSwitchNum.getText().toString());
-            if (start < 10) {
+            if (start < 50) {
                 start++;
                 String result = String.valueOf(start);
                 teleopAllianceSwitchNum.setText(result);
@@ -149,19 +155,19 @@ public class MainActivity extends AppCompatActivity {
         });
 
         Button teleopAllianceSwitchM = (Button) findViewById(R.id.teleopAllianceSwitchMinus);
-        autoSwitchP.setOnClickListener(v -> {
+        teleopAllianceSwitchM.setOnClickListener(v -> {
             int start = Integer.parseInt(teleopAllianceSwitchNum.getText().toString());
             if (start > 0) {
-                start++;
+                start--;
                 String result = String.valueOf(start);
                 teleopAllianceSwitchNum.setText(result);
             }
         });
 
         Button vaultP = (Button) findViewById(R.id.vaultPlus);
-        autoSwitchP.setOnClickListener(v -> {
+        vaultP.setOnClickListener(v -> {
             int start = Integer.parseInt(vaultNum.getText().toString());
-            if (start < 10) {
+            if (start < 9) {
                 start++;
                 String result = String.valueOf(start);
                 vaultNum.setText(result);
@@ -169,12 +175,32 @@ public class MainActivity extends AppCompatActivity {
         });
 
         Button vaultM = (Button) findViewById(R.id.vaultMinus);
-        autoSwitchP.setOnClickListener(v -> {
+        vaultM.setOnClickListener(v -> {
             int start = Integer.parseInt(vaultNum.getText().toString());
             if (start > 0) {
-                start++;
+                start--;
                 String result = String.valueOf(start);
                 vaultNum.setText(result);
+            }
+        });
+
+        Button driverRatingP = (Button) findViewById(R.id.driverRatingPlus);
+        driverRatingP.setOnClickListener(v -> {
+            int start = Integer.parseInt(driverNum.getText().toString());
+            if (start < 5) {
+                start++;
+                String result = String.valueOf(start);
+                driverNum.setText(result);
+            }
+        });
+
+        Button driverRatingM = (Button) findViewById(R.id.driverRatingMinus);
+        driverRatingM.setOnClickListener(v -> {
+            int start = Integer.parseInt(driverNum.getText().toString());
+            if (start > 0) {
+                start--;
+                String result = String.valueOf(start);
+                driverNum.setText(result);
             }
         });
 
