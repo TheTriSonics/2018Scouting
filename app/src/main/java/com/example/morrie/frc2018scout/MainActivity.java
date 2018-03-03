@@ -1,12 +1,11 @@
 package com.example.morrie.frc2018scout;
 
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
+import android.os.Environment;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.text.TextUtils;
-import android.view.View;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.ArrayAdapter;
@@ -15,6 +14,13 @@ import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.Switch;
+
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.IOException;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -45,24 +51,101 @@ public class MainActivity extends AppCompatActivity {
         SLadapt.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         startingLocationSpinner.setAdapter(SLadapt);
 
-        Spinner climbSpinner = (Spinner) findViewById(R.id.climbSpinner);
-        ArrayAdapter<CharSequence> Cadapt = ArrayAdapter.createFromResource(this, R.array.Climb, android.R.layout.simple_spinner_item);
-        Cadapt.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        climbSpinner.setAdapter(Cadapt);
-
         EditText matchNum = (EditText) findViewById(R.id.matchNumberText);
         Switch allianceColor = (Switch) findViewById(R.id.allianceColorSwitch);
         CheckBox autoBaseline = (CheckBox) findViewById(R.id.baselineCheckBox);
         EditText autoSwitchNum = (EditText) findViewById(R.id.autonSwitch);
         EditText autoScaleNum = (EditText) findViewById(R.id.autonScale);
         CheckBox autoIncorrectSwitch = (CheckBox) findViewById(R.id.incorrectColorCheckbox);
-        CheckBox autoBaseLine = (CheckBox) findViewById(R.id.baselineCheckBox);
         EditText teleopOpponentSwitchNum = (EditText) findViewById(R.id.teleopOpponentSwitch);
         EditText teleopScaleNum = (EditText) findViewById(R.id.teleopScale);
         EditText teleopAllianceSwitchNum = (EditText) findViewById(R.id.teleopAllianceSwitch);
         EditText vaultNum = (EditText) findViewById(R.id.vault);
         CheckBox defense = (CheckBox) findViewById(R.id.defenseCheckbox);
-        EditText driverNum = (EditText) findViewById(R.id.driverRating);
+        CheckBox climb = (CheckBox) findViewById(R.id.climbCheckbox);
+        CheckBox platformPark = (CheckBox) findViewById(R.id.platformChechbox);
+        CheckBox lifted = (CheckBox) findViewById(R.id.liftedCheckbox);
+        EditText comments = (EditText) findViewById(R.id.commentsText);
+        Button submit = (Button) findViewById(R.id.submitButton);
+
+        submit.setOnClickListener(v -> {
+            if (teamMembersSpinner.getSelectedItem().toString().equals("")) {
+                Snackbar.make(findViewById(R.id.scouterNameSpinner), "Please enter Scouter Name", Snackbar.LENGTH_SHORT).show();
+            } else if (eventSpinner.getSelectedItem().toString().equals("")) {
+                Snackbar.make(findViewById(R.id.eventSpinner), "Please enter the Event", Snackbar.LENGTH_SHORT).show();
+            } else if (teamNumbersSpinner.getSelectedItem().toString().equals("")) {
+                Snackbar.make(findViewById(R.id.teamNumberSpinner), "Please enter Team Number", Snackbar.LENGTH_SHORT).show();
+            } else if (matchNum.getText().toString().equals("")) {
+                Snackbar.make(findViewById(R.id.matchNumberText), "Please enter Match Number", Snackbar.LENGTH_SHORT).show();
+            } else if (startingLocationSpinner.getSelectedItem().toString().equals("")) {
+                Snackbar.make(findViewById(R.id.startingPositionSpinner), "Please enter Autonomous Starting Position", Snackbar.LENGTH_SHORT).show();
+            } else {
+                JSONObject output = new JSONObject();
+                try {
+                    output.put("name", teamMembersSpinner.getSelectedItem());
+                    output.put("event", eventSpinner.getSelectedItem().toString());
+                    output.put("team_number", teamNumbersSpinner.getSelectedItem().toString());
+                    output.put("match_number", matchNum.getText());
+                    output.put("starting_position", startingLocationSpinner.getSelectedItem().toString());
+                    output.put("baseline", autoBaseline.isChecked());
+                    output.put("auto_switch", autoSwitchNum.getText());
+                    output.put("auto_scale", autoScaleNum.getText());
+                    output.put("auto_incorrect_color", autoIncorrectSwitch.isChecked());
+                    output.put("tele_opponent_switch", teleopOpponentSwitchNum.getText());
+                    output.put("tele_scale", teleopScaleNum.getText());
+                    output.put("tele_alliance_switch", teleopAllianceSwitchNum.getText());
+                    output.put("vault", vaultNum.getText());
+                    output.put("defense", defense.isChecked());
+                    output.put("climb", climb.isChecked());
+                    output.put("parked_on_platform", platformPark.isChecked());
+                    output.put("lifted_by_robot", lifted.isChecked());
+                    output.put("comments", comments.getText());
+                    Log.d("output", output.toString());
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+
+                // Write JSON to file
+                String outStr = matchNum.getText() + "-" + teamNumbersSpinner.getSelectedItem().toString() + ".json";
+                File dir = new File(Environment.getExternalStorageDirectory() + "/scoutingFiles/");
+                if(!dir.exists()){
+                    dir.mkdir();
+                }
+
+                try{
+                    File outFile = new File(dir, outStr);
+                    FileOutputStream out = new FileOutputStream(outFile);
+                    out.write(output.toString().getBytes());
+                    out.close();
+                } catch (IOException e) {
+                    Log.e("Exception", "File write failed: " + e.toString());
+                }
+
+                Snackbar.make(findViewById(R.id.myConstraintLayout), "Successfully Saved: " + outStr, Snackbar.LENGTH_SHORT).show();
+
+                teamMembersSpinner.setSelection(0);
+                eventSpinner.setSelection(0);
+                teamNumbersSpinner.setSelection(0);
+                matchNum.setText("");
+                allianceColor.setChecked(false);
+                startingLocationSpinner.setSelection(0);
+                autoBaseline.setChecked(false);
+                autoSwitchNum.setText("0");
+                autoScaleNum.setText("0");
+                autoIncorrectSwitch.setChecked(false);
+                teleopOpponentSwitchNum.setText("0");
+                teleopScaleNum.setText("0");
+                teleopAllianceSwitchNum.setText("0");
+                vaultNum.setText("0");
+                defense.setChecked(false);
+                climb.setChecked(false);
+                platformPark.setChecked(false);
+                lifted.setChecked(false);
+                comments.setText("");
+            }
+
+        });
+
 
         Button autoSwitchP = (Button) findViewById(R.id.autonSwitchPlus);
         autoSwitchP.setOnClickListener(v -> {
@@ -181,26 +264,6 @@ public class MainActivity extends AppCompatActivity {
                 start--;
                 String result = String.valueOf(start);
                 vaultNum.setText(result);
-            }
-        });
-
-        Button driverRatingP = (Button) findViewById(R.id.driverRatingPlus);
-        driverRatingP.setOnClickListener(v -> {
-            int start = Integer.parseInt(driverNum.getText().toString());
-            if (start < 5) {
-                start++;
-                String result = String.valueOf(start);
-                driverNum.setText(result);
-            }
-        });
-
-        Button driverRatingM = (Button) findViewById(R.id.driverRatingMinus);
-        driverRatingM.setOnClickListener(v -> {
-            int start = Integer.parseInt(driverNum.getText().toString());
-            if (start > 0) {
-                start--;
-                String result = String.valueOf(start);
-                driverNum.setText(result);
             }
         });
 
