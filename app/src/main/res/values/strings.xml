@@ -38,46 +38,47 @@
     </string-array>
     <string-array name="KetteringTeamNumbers">
         <item></item>
-        <item>217</item>
-        <item>314</item>
-        <item>469</item>
-        <item>494</item>
-        <item>1243</item>
-        <item>1505</item>
-        <item>1506</item>
-        <item>1684</item>
-        <item>2604</item>
-        <item>2619</item>
-        <item>3234</item>
-        <item>3534</item>
-        <item>3667</item>
-        <item>3707</item>
+        <item>74</item>
+        <item>85</item>
+        <item>107</item>
+        <item>141</item>
+        <item>2054</item>
+        <item>2075</item>
+        <item>2405</item>
+        <item>3098</item>
+        <item>3458</item>
+        <item>3546</item>
+        <item>3572</item>
+        <item>3620</item>
         <item>4003</item>
-        <item>4380</item>
-        <item>4998</item>
-        <item>5046</item>
-        <item>5084</item>
-        <item>5201</item>
-        <item>5235</item>
-        <item>5238</item>
-        <item>5447</item>
-        <item>5533</item>
-        <item>5712</item>
-        <item>5713</item>
-        <item>5774</item>
-        <item>5926</item>
-        <item>6066</item>
-        <item>6073</item>
-        <item>6085</item>
-        <item>6193</item>
+        <item>4004</item>
+        <item>4337</item>
+        <item>4956</item>
+        <item>5162</item>
+        <item>5173</item>
+        <item>5255</item>
+        <item>5316</item>
+        <item>5470</item>
+        <item>5473</item>
+        <item>5610</item>
+        <item>5622</item>
+        <item>5664</item>
+        <item>5675</item>
+        <item>5927</item>
+        <item>5963</item>
+        <item>5980</item>
+        <item>6043</item>
+        <item>6065</item>
+        <item>6094</item>
+        <item>6098</item>
+        <item>6114</item>
+        <item>6122</item>
+        <item>6128</item>
+        <item>6428</item>
         <item>6531</item>
         <item>6548</item>
-        <item>6597</item>
-        <item>6631</item>
-        <item>6635</item>
-        <item>6954</item>
-        <item>7144</item>
-        <item>7192</item>
+        <item>7054</item>
+
     </string-array>
 
     <string-array name="Event">
